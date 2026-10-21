@@ -6,9 +6,9 @@ Geometric waveguides use reflection inside the glass and conventional refraction
 
 ## Examples
 
-<center><img src='geometric_k_space.png' height="250px"><img src='geometric_layout.png' height="250px"></center>
+<center><img src='geometric_k_space.png'><img src='geometric_layout.png'></center>
 
-<center><img src='grating_k_space.png' height="250px"><img src='grating_layout.png' height="250px"></center>
+<center><img src='grating_k_space.png'><img src='grating_layout.png'></center>
 
 ## Files
 
