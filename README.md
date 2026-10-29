@@ -6,9 +6,9 @@ Geometric waveguides use reflection inside the glass and conventional refraction
 
 ## Examples
 
-<center><img src='geometric_k_space.png' width="300px"><img src='geometric_layout.png' width="300px"></center>
+<center><img src='geometric_k_space.png' width="250px"><img src='geometric_layout.png' width="250px"></center>
 
-<center><img src='grating_k_space.png' width="300px"><img src='grating_layout.png' width="300px"></center>
+<center><img src='grating_k_space.png' width="200px"><img src='grating_layout.png' width="200px"></center>
 
 Multi-wavelength (450, 550, 650 nm) runs of the same two designs:
 
