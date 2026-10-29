@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+import copy
+
 import numpy as np
 
 from functions import rotate_vector, unit_normal
@@ -24,6 +26,10 @@ class Reflector:
 
     def reflect(self, ray):
         return ray.copy_with(K=self.calc_reflect_k(ray))
+
+    def at_wavelength(self, wavelength=None):
+        """An ideal mirror is achromatic; return an independent copy."""
+        return copy.deepcopy(self)
 
     def calc_interact_k(self, ray, n_out=None, reverse=False):
         """Alias for calc_reflect_k."""

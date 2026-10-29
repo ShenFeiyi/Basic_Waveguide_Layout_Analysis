@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+import copy
+
 import numpy as np
 
 from RayObject import Ray
@@ -29,8 +31,14 @@ class Grating:
 
     @property
     def K(self):
-        # Grating vector, (kx, ky)
+        # Grating vector, (kx, ky), normalized by the vacuum wavenumber of self.wavelength
         return self.M * self.wavelength / self.grating_period * np.array([np.cos(np.radians(self.PHI)), np.sin(np.radians(self.PHI))])
+
+    def at_wavelength(self, wavelength):
+        """Return a copy that diffracts light of another wavelength (nm); the period is unchanged."""
+        grating = copy.copy(self)
+        grating.wavelength = wavelength
+        return grating
 
     def calc_diffract_k(self, ray, n_out, reverse=False):
         """Return the candidate wave vector after this grating.

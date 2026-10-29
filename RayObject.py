@@ -10,7 +10,8 @@ class Ray:
     - K: Wave vector (kx, ky, kz)
     - theta: Elevation angle in degrees
     - phi: Azimuth angle in degrees
-    - field_angle: Field angle (theta_x, theta_y) in degrees, relative to the surface normal, catesian coordinates
+    - field_angle: Field angle (theta_x, theta_y) in degrees, relative to the surface normal, catesian coordinates;
+      measured from the +z or -z axis the ray travels along, so its sign follows (kx, ky)
     - n: Refractive index of the medium
     - x, y, z: Position of the ray in 3D space, mm
     """
@@ -38,8 +39,9 @@ class Ray:
 
             self.kx, self.ky, self.kz = self.K[0], self.K[1], self.K[2]
             assert not self.kz == 0, "kz is zero, evanescent wave"
-            self.theta_x = np.degrees(np.arctan(self.kx / self.kz))
-            self.theta_y = np.degrees(np.arctan(self.ky / self.kz))
+            # |kz| keeps the sign of a -z ray's field angle equal to the sign of its tilt.
+            self.theta_x = np.degrees(np.arctan(self.kx / abs(self.kz)))
+            self.theta_y = np.degrees(np.arctan(self.ky / abs(self.kz)))
             self.field_angle = np.array([self.theta_x, self.theta_y]) # field angle, cartesian, relative to surface normal
             self.theta = self.calc_elevation_angle() # elevation angle, degrees
             self.phi = self.calc_azimuth_angle() # azimuth angle, degrees
