@@ -16,7 +16,7 @@ Multi-wavelength (450, 550, 650 nm) runs of the same two designs:
 
 <center><img src='grating_fov_rgb.png' width="700px"></center>
 
-<center><img src='geometric_k_space_rgb.png'><img src='geometric_layout_rgb.png'></center>
+<center><img src='geometric_k_space_rgb.png' width="500px"><img src='geometric_layout_rgb.png' width="500px"></center>
 
 <center><img src='geometric_fov_rgb.png' width="700px"></center>
 
